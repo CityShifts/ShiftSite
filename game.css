@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2em;
+  color: white;
+}
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  box-shadow: 3px 5px 0px 0px rgba(0,0,0,0.75);
+}
+#counter {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+#end {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+#end button {
+  background-color: red;
+  padding: 20px 50px 20px 50px;
+  font-family: inherit;
+  font-size: inherit;
+}
+#controlls {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+#controlls div {
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  grid-template-rows: auto auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin-bottom: 20px;
+}
+#controlls button {
+  width: 100%;
+  background-color: white;
+  border: 1px solid lightgray;
+}
+#controlls button:first-of-type {
+  grid-column: 1/-1;
+}
+
+/* styles.css */
+
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the body takes up the entire viewport */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0; /* Example background color */
+}
+
+#controlls {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align items to the bottom */
+  align-items: center;
+  margin-bottom: 20px; /* Adjust margin as needed */
+  flex-grow: 1; /* Take remaining vertical space */
+}
+
+button {
+  display: inline-block;
+  background-color: #007bff; /* Example button background color */
+  color: white; /* Button text color */
+  border: none;
+  padding: 15px; /* Adjust button padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px; /* Add some margin between buttons */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Adjust button size and padding for smaller screens */
+@media (max-width: 768px) {
+  button {
+    padding: 10px; /* Adjusted padding for smaller screens */
+    font-size: 14px; /* Adjusted font size */
+  }
+  
+  #retry {
+    font-size: 12px; /* Smaller font size for the retry button */
+  }
+}
+
+#end {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+#poweredBy {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font-size: 14px; /* Default font size */
+}
+
+@media (max-width: 768px) {
+  #poweredBy {
+    font-size: 12px; /* Adjusted font size for smaller screens */
+  }
+}
+
+#poweredBy a:hover {
+  text-decoration: underline;
+}
