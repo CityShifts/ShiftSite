@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #69c4e3; /* The new blue background */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    text-align: center; /* Center align content horizontally */
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.floating-text {
+    font-size: 50px;
+    color: white;
+    text-shadow: 
+        1px 2px 0 #000, 
+        2px 4px 0 #000, 
+        3px 6px 0 #000, 
+        4px 8px 0 #000, 
+        5px 10px 0 #000;
+}
+
+.trappy-float {
+    animation: float-trappy 3s ease-in-out infinite alternate;
+}
+
+@keyframes float-trappy {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); /* Adjust distance */
+    }
+}
+
+.play-button {
+    background-color: #3b5998; /* Blue background color */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px; /* Adjust spacing */
+    transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: #2a3f7d; /* Darker shade of blue on hover */
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.credit {
+    color: white;
+    font-size: 14px;
+    margin-top: 10px; /* Adjust spacing */
+}
+
+.mute-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.mute-button svg {
+    fill: #333;
+    width: 24px;
+    height: 24px;
+}
+
+.mute-text {
+    color: white;
+    font-size: 12px;
+    margin-top: 5px; /* Adjust spacing */
+}
+
+.muted .mute-button svg {
+    fill: #999; /* Adjust color for muted state */
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+    }
+    100% {
+        box-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+    }
+}

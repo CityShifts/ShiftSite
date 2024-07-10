@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trappy Roadz</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="menu.css">
+</head>
+<body>
+<div class="container">
+    <div class="title-container">
+        <div class="floating-text trappy-float">TRAPPY ROADZ</div>
+        <button id="play-button" class="play-button glow-animation" onclick="playNow()">Play now</button>
+        <div class="credit">Made by CityShifts</div>
+    </div>
+    <div class="mute-button" onclick="toggleMute()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 2c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm-2 10h4v-2h-4v2z"/>
+        </svg>
+        <span class="mute-text">Mute</span>
+    </div>
+</div>
+<audio id="background-music" autoplay loop>
+    <source src="/audio/menu.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<audio id="click-sound">
+    <source src="/audio/click.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<script src="menu.js"></script>
+<script>
+    // Function to toggle mute/unmute
+    function toggleMute() {
+        var music = document.getElementById('background-music');
+        var muteButton = document.querySelector('.mute-button');
+        var muteText = document.querySelector('.mute-text');
+    
+        if (music.muted) {
+            music.muted = false;
+            muteButton.classList.remove('muted');
+            muteText.textContent = 'Mute';
+        } else {
+            music.muted = true;
+            muteButton.classList.add('muted');
+            muteText.textContent = 'Unmute';
+        }
+    }
+    
+    // Function to play the game and redirect to another page
+    function playNow() {
+        var clickSound = document.getElementById('click-sound');
+    
+        // Play click sound
+        clickSound.currentTime = 0;
+        clickSound.play();
+    
+        // Redirect to another page (example: 'game.html')
+        window.location.href = 'game.html';
+    }
+    </script>
+    </body>
+</html>
