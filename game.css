@@ -50,7 +50,7 @@ button {
 }
 #controlls button {
   width: 100%;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: 1px solid lightgray;
 }
 #controlls button:first-of-type {
